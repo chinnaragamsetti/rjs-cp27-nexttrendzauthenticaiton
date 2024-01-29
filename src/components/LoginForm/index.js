@@ -24,6 +24,7 @@ class LoginForm extends Component {
       method: 'POST',
       body: JSON.stringify(userDetails),
     }
+
     const response = await fetch(url, options)
 
     if (response.ok === true) {
