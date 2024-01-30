@@ -10,6 +10,7 @@ specifiers:
   eslint-plugin-prettier: 3.3.1
   history: 5.0.0
   husky: 4.3.8
+  js_cookie: 1.0.0
   lint-staged: 10.5.4
   msw: 0.28.1
   npm-run-all: 4.1.5
@@ -25,6 +26,7 @@ dependencies:
   '@testing-library/user-event': 12.6.2
   chalk: 4.1.0
   history: 5.0.0
+  js_cookie: 1.0.0
   msw: 0.28.1
   react: 17.0.1
   react-dom: 17.0.1_react@17.0.1
@@ -8861,6 +8863,10 @@ packages:
       argparse: 1.0.10
       esprima: 4.0.1
     dev: true
+
+  /js_cookie/1.0.0:
+    resolution: {integrity: sha512-tWVqmUx3IxRVEa7qKbIlF2SBXulGPkxrl1Eb/Cw468Sbf7U3iRdOtFunNGk4ICH+1TSW6cRkmwX1gxSdE8sZ3g==}
+    dev: false
 
   /jsdom/16.7.0:
     resolution: {integrity: sha512-u9Smc2G1USStM+s/x1ru5Sxrl6mPYCbByG1U/hUmqaVsm4tbNyS7CicOSRyuGQYZhTu0h84qkZZQ/I+dzizSVw==}

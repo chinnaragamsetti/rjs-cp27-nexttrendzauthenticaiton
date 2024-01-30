@@ -1,18 +1,25 @@
 // Write your JS code here
-import {Component} from 'react'
 
+// import Cookies from 'js-cookie'
+import {Component} from 'react'
 import './index.css'
 
 class LoginForm extends Component {
   state = {
     username: '',
     password: '',
-    status: false,
+    showerrorMsg: false,
+    errorMsg: '',
   }
 
   onSubmitSuccess = () => {
     const {history} = this.props
+    // Cookies.set('jwt_token', jwtToken, {expires: 30})
     history.replace('/')
+  }
+
+  onSubmitfailure = errorMsg => {
+    this.setState({showerrorMsg: true, errorMsg})
   }
 
   submitForm = async event => {
@@ -26,11 +33,11 @@ class LoginForm extends Component {
     }
 
     const response = await fetch(url, options)
-
+    const data = await response.json()
     if (response.ok === true) {
       this.onSubmitSuccess()
     } else {
-      this.setState({status: true})
+      this.onSubmitfailure(data.error_msg)
     }
   }
 
@@ -81,7 +88,7 @@ class LoginForm extends Component {
   }
 
   render() {
-    const {status} = this.state
+    const {showerrorMsg, errorMsg} = this.state
     return (
       <div className="login-form-container">
         <img
@@ -105,7 +112,7 @@ class LoginForm extends Component {
           <button type="submit" className="login-button">
             Login
           </button>
-          {status && <p className="error">*Username and password did match</p>}
+          {showerrorMsg && <p className="error">{errorMsg}</p>}
         </form>
       </div>
     )
